@@ -1,0 +1,4 @@
+Split,Total_Images,Total_Valid_Objects,Avg_Objects_Per_Image,Median_Objects_Per_Image,Min_Objects_In_Image,Max_Objects_In_Image,Small_Objects_Count,Small_Objects_Pct,Medium_Objects_Count,Medium_Objects_Pct,Large_Objects_Count,Large_Objects_Pct,Mean_BBox_Area_px2,Median_BBox_Area_px2,Mean_BBox_Width_px,Mean_BBox_Height_px
+Train,6471,343204,53.04,42.0,1,902,207524,60.47,116704,34.0,18976,5.53,2448.41,680.0,38.59,37.4
+Val,548,38759,70.73,65.0,1,317,26575,68.56,11117,28.68,1067,2.75,1512.14,520.0,31.06,31.35
+Combined,7019,381963,54.42,43.0,1,902,234099,61.29,127821,33.46,20043,5.25,2353.4,660.0,37.83,36.79

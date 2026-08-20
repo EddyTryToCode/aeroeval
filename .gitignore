@@ -1,1 +1,68 @@
-/AeroEval_Detailed_Action_Plan.md
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data — KHÔNG BAO GIỜ commit dataset
+data/VisDrone*/
+data/visdrone_yolo/
+data/*.zip
+data/*.tar
+data/*.tar.gz
+data/*.rar
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.engine
+*.trt
+runs/
+weights/
+
+# Reports (giữ code tạo report, không commit ảnh nặng)
+reports/**/*.png
+reports/**/*.jpg
+reports/**/*.jpeg
+reports/**/*.gif
+reports/annotation_samples/
+reports/baseline/qualitative_results/
+reports/error_analysis/
+
+# Experiment outputs
+experiments/*/
+mlruns/
+wandb/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# Environment variables
+.env
+.env.local

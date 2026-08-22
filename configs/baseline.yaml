@@ -1,0 +1,19 @@
+# Baseline Training Configuration for YOLOv11n on VisDrone-DET
+model: yolo11n.pt
+data: /home/host/aeroeval/configs/visdrone.yaml
+epochs: 50
+imgsz: 640
+batch: 8              # 8 is optimal for 4GB VRAM GPU (RTX 3050 Ti)
+device: 0
+workers: 4
+project: /home/host/aeroeval/experiments
+name: baseline_yolo11n
+seed: 42
+deterministic: true
+save: true
+save_period: 10
+plots: true
+patience: 15
+optimizer: auto
+lr0: 0.01
+lrf: 0.01

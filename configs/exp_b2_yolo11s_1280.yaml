@@ -1,0 +1,19 @@
+# Experiment B2: YOLO11s - Imgsz 1280 - 100 Epochs (Optimized for NVIDIA L4 24GB VRAM)
+model: yolo11s.pt
+data: configs/visdrone.yaml
+epochs: 100
+imgsz: 1280
+batch: 8              # Optimized for NVIDIA L4 24GB VRAM
+device: 0
+workers: 8
+project: experiments
+name: exp_b2_yolo11s_1280
+seed: 42
+deterministic: true
+save: true
+save_period: 10
+plots: true
+patience: 20
+optimizer: auto
+lr0: 0.01
+lrf: 0.01

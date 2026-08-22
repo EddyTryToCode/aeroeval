@@ -1,5 +1,5 @@
-# VisDrone2019-DET Dataset configuration for YOLO
-path: ../data/visdrone_yolo
+# Dataset definition
+path: /home/host/aeroeval/data/visdrone_yolo
 train: images/train
 val: images/val
 

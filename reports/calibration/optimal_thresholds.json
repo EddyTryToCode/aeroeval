@@ -1,0 +1,34 @@
+{
+    "A": {
+        "Model": "A (YOLO11n-640)",
+        "optimal_threshold": 0.2,
+        "max_f1": 0.505,
+        "precision_at_optimal": 0.595,
+        "recall_at_optimal": 0.44,
+        "ECE": 0.0321
+    },
+    "B1": {
+        "Model": "B1 (YOLO11s-960)",
+        "optimal_threshold": 0.25,
+        "max_f1": 0.656,
+        "precision_at_optimal": 0.717,
+        "recall_at_optimal": 0.604,
+        "ECE": 0.0428
+    },
+    "B2": {
+        "Model": "B2 (YOLO11s-1280)",
+        "optimal_threshold": 0.25,
+        "max_f1": 0.693,
+        "precision_at_optimal": 0.735,
+        "recall_at_optimal": 0.655,
+        "ECE": 0.0527
+    },
+    "B3": {
+        "Model": "B3 (YOLO11m-960)",
+        "optimal_threshold": 0.3,
+        "max_f1": 0.688,
+        "precision_at_optimal": 0.763,
+        "recall_at_optimal": 0.627,
+        "ECE": 0.0469
+    }
+}

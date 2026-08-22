@@ -1,0 +1,97 @@
+Experiment,Model_Config,Corruption,Severity_Index,Severity,Clean_mAP50,Corrupted_mAP50,mAP50_Drop,Retention_Rate_%,Corrupted_mAP50-95
+A,A (YOLO11n-640),Gaussian Blur,1,Mild (Level 1),0.291,0.296,-0.005,101.9,0.167
+B1,B1 (YOLO11s-960),Gaussian Blur,1,Mild (Level 1),0.459,0.457,0.002,99.5,0.268
+B2,B2 (YOLO11s-1280),Gaussian Blur,1,Mild (Level 1),0.519,0.495,0.024,95.4,0.296
+B3,B3 (YOLO11m-960),Gaussian Blur,1,Mild (Level 1),0.512,0.513,-0.001,100.2,0.306
+A,A (YOLO11n-640),Gaussian Blur,2,Medium (Level 2),0.291,0.292,-0.001,100.3,0.164
+B1,B1 (YOLO11s-960),Gaussian Blur,2,Medium (Level 2),0.459,0.421,0.038,91.8,0.245
+B2,B2 (YOLO11s-1280),Gaussian Blur,2,Medium (Level 2),0.519,0.455,0.064,87.7,0.271
+B3,B3 (YOLO11m-960),Gaussian Blur,2,Medium (Level 2),0.512,0.48,0.032,93.7,0.283
+A,A (YOLO11n-640),Gaussian Blur,3,Heavy (Level 3),0.291,0.28,0.011,96.3,0.154
+B1,B1 (YOLO11s-960),Gaussian Blur,3,Heavy (Level 3),0.459,0.374,0.084,81.6,0.215
+B2,B2 (YOLO11s-1280),Gaussian Blur,3,Heavy (Level 3),0.519,0.399,0.119,77.0,0.234
+B3,B3 (YOLO11m-960),Gaussian Blur,3,Heavy (Level 3),0.512,0.42,0.092,82.0,0.244
+A,A (YOLO11n-640),Motion Blur,1,Mild (Level 1),0.291,0.27,0.021,92.9,0.15
+B1,B1 (YOLO11s-960),Motion Blur,1,Mild (Level 1),0.459,0.391,0.068,85.1,0.227
+B2,B2 (YOLO11s-1280),Motion Blur,1,Mild (Level 1),0.519,0.418,0.101,80.5,0.247
+B3,B3 (YOLO11m-960),Motion Blur,1,Mild (Level 1),0.512,0.431,0.081,84.2,0.257
+A,A (YOLO11n-640),Motion Blur,2,Medium (Level 2),0.291,0.211,0.079,72.7,0.117
+B1,B1 (YOLO11s-960),Motion Blur,2,Medium (Level 2),0.459,0.283,0.176,61.7,0.162
+B2,B2 (YOLO11s-1280),Motion Blur,2,Medium (Level 2),0.519,0.274,0.245,52.8,0.154
+B3,B3 (YOLO11m-960),Motion Blur,2,Medium (Level 2),0.512,0.303,0.209,59.2,0.174
+A,A (YOLO11n-640),Motion Blur,3,Heavy (Level 3),0.291,0.126,0.165,43.3,0.067
+B1,B1 (YOLO11s-960),Motion Blur,3,Heavy (Level 3),0.459,0.143,0.316,31.2,0.073
+B2,B2 (YOLO11s-1280),Motion Blur,3,Heavy (Level 3),0.519,0.111,0.408,21.4,0.058
+B3,B3 (YOLO11m-960),Motion Blur,3,Heavy (Level 3),0.512,0.146,0.366,28.5,0.076
+A,A (YOLO11n-640),Low Light,1,Mild (Level 1),0.291,0.289,0.001,99.5,0.161
+B1,B1 (YOLO11s-960),Low Light,1,Mild (Level 1),0.459,0.464,-0.005,101.1,0.274
+B2,B2 (YOLO11s-1280),Low Light,1,Mild (Level 1),0.519,0.515,0.004,99.2,0.31
+B3,B3 (YOLO11m-960),Low Light,1,Mild (Level 1),0.512,0.514,-0.002,100.3,0.31
+A,A (YOLO11n-640),Low Light,2,Medium (Level 2),0.291,0.292,-0.001,100.3,0.16
+B1,B1 (YOLO11s-960),Low Light,2,Medium (Level 2),0.459,0.461,-0.002,100.4,0.272
+B2,B2 (YOLO11s-1280),Low Light,2,Medium (Level 2),0.519,0.514,0.005,99.0,0.308
+B3,B3 (YOLO11m-960),Low Light,2,Medium (Level 2),0.512,0.515,-0.003,100.6,0.311
+A,A (YOLO11n-640),Low Light,3,Heavy (Level 3),0.291,0.288,0.003,99.0,0.156
+B1,B1 (YOLO11s-960),Low Light,3,Heavy (Level 3),0.459,0.451,0.007,98.4,0.265
+B2,B2 (YOLO11s-1280),Low Light,3,Heavy (Level 3),0.519,0.512,0.007,98.6,0.306
+B3,B3 (YOLO11m-960),Low Light,3,Heavy (Level 3),0.512,0.516,-0.004,100.8,0.31
+A,A (YOLO11n-640),Overexposure,1,Mild (Level 1),0.291,0.288,0.003,99.0,0.158
+B1,B1 (YOLO11s-960),Overexposure,1,Mild (Level 1),0.459,0.452,0.007,98.4,0.267
+B2,B2 (YOLO11s-1280),Overexposure,1,Mild (Level 1),0.519,0.514,0.005,99.0,0.307
+B3,B3 (YOLO11m-960),Overexposure,1,Mild (Level 1),0.512,0.504,0.008,98.5,0.301
+A,A (YOLO11n-640),Overexposure,2,Medium (Level 2),0.291,0.278,0.013,95.7,0.153
+B1,B1 (YOLO11s-960),Overexposure,2,Medium (Level 2),0.459,0.45,0.008,98.2,0.264
+B2,B2 (YOLO11s-1280),Overexposure,2,Medium (Level 2),0.519,0.503,0.015,97.0,0.298
+B3,B3 (YOLO11m-960),Overexposure,2,Medium (Level 2),0.512,0.497,0.015,97.2,0.292
+A,A (YOLO11n-640),Overexposure,3,Heavy (Level 3),0.291,0.251,0.04,86.2,0.131
+B1,B1 (YOLO11s-960),Overexposure,3,Heavy (Level 3),0.459,0.439,0.02,95.7,0.251
+B2,B2 (YOLO11s-1280),Overexposure,3,Heavy (Level 3),0.519,0.478,0.04,92.2,0.28
+B3,B3 (YOLO11m-960),Overexposure,3,Heavy (Level 3),0.512,0.463,0.049,90.4,0.273
+A,A (YOLO11n-640),Gaussian Noise,1,Mild (Level 1),0.291,0.248,0.042,85.4,0.135
+B1,B1 (YOLO11s-960),Gaussian Noise,1,Mild (Level 1),0.459,0.403,0.056,87.8,0.232
+B2,B2 (YOLO11s-1280),Gaussian Noise,1,Mild (Level 1),0.519,0.461,0.058,88.8,0.276
+B3,B3 (YOLO11m-960),Gaussian Noise,1,Mild (Level 1),0.512,0.433,0.079,84.5,0.259
+A,A (YOLO11n-640),Gaussian Noise,2,Medium (Level 2),0.291,0.181,0.11,62.3,0.097
+B1,B1 (YOLO11s-960),Gaussian Noise,2,Medium (Level 2),0.459,0.271,0.188,59.1,0.158
+B2,B2 (YOLO11s-1280),Gaussian Noise,2,Medium (Level 2),0.519,0.331,0.188,63.7,0.192
+B3,B3 (YOLO11m-960),Gaussian Noise,2,Medium (Level 2),0.512,0.301,0.211,58.8,0.173
+A,A (YOLO11n-640),Gaussian Noise,3,Heavy (Level 3),0.291,0.111,0.18,38.1,0.057
+B1,B1 (YOLO11s-960),Gaussian Noise,3,Heavy (Level 3),0.459,0.097,0.362,21.2,0.051
+B2,B2 (YOLO11s-1280),Gaussian Noise,3,Heavy (Level 3),0.519,0.143,0.376,27.6,0.079
+B3,B3 (YOLO11m-960),Gaussian Noise,3,Heavy (Level 3),0.512,0.145,0.367,28.3,0.079
+A,A (YOLO11n-640),JPEG Compression,1,Mild (Level 1),0.291,0.289,0.002,99.5,0.16
+B1,B1 (YOLO11s-960),JPEG Compression,1,Mild (Level 1),0.459,0.458,0.001,99.9,0.271
+B2,B2 (YOLO11s-1280),JPEG Compression,1,Mild (Level 1),0.519,0.517,0.002,99.7,0.31
+B3,B3 (YOLO11m-960),JPEG Compression,1,Mild (Level 1),0.512,0.512,-0.0,100.0,0.307
+A,A (YOLO11n-640),JPEG Compression,2,Medium (Level 2),0.291,0.281,0.01,96.6,0.155
+B1,B1 (YOLO11s-960),JPEG Compression,2,Medium (Level 2),0.459,0.41,0.049,89.3,0.238
+B2,B2 (YOLO11s-1280),JPEG Compression,2,Medium (Level 2),0.519,0.442,0.076,85.3,0.258
+B3,B3 (YOLO11m-960),JPEG Compression,2,Medium (Level 2),0.512,0.437,0.074,85.4,0.249
+A,A (YOLO11n-640),JPEG Compression,3,Heavy (Level 3),0.291,0.281,0.009,96.8,0.154
+B1,B1 (YOLO11s-960),JPEG Compression,3,Heavy (Level 3),0.459,0.424,0.035,92.3,0.241
+B2,B2 (YOLO11s-1280),JPEG Compression,3,Heavy (Level 3),0.519,0.458,0.061,88.2,0.265
+B3,B3 (YOLO11m-960),JPEG Compression,3,Heavy (Level 3),0.512,0.465,0.047,90.7,0.269
+A,A (YOLO11n-640),Occlusion,1,Mild (Level 1),0.291,0.262,0.029,90.0,0.142
+B1,B1 (YOLO11s-960),Occlusion,1,Mild (Level 1),0.459,0.42,0.039,91.5,0.241
+B2,B2 (YOLO11s-1280),Occlusion,1,Mild (Level 1),0.519,0.467,0.052,90.0,0.277
+B3,B3 (YOLO11m-960),Occlusion,1,Mild (Level 1),0.512,0.462,0.05,90.3,0.27
+A,A (YOLO11n-640),Occlusion,2,Medium (Level 2),0.291,0.237,0.053,81.7,0.128
+B1,B1 (YOLO11s-960),Occlusion,2,Medium (Level 2),0.459,0.414,0.045,90.2,0.236
+B2,B2 (YOLO11s-1280),Occlusion,2,Medium (Level 2),0.519,0.452,0.067,87.1,0.262
+B3,B3 (YOLO11m-960),Occlusion,2,Medium (Level 2),0.512,0.464,0.048,90.6,0.271
+A,A (YOLO11n-640),Occlusion,3,Heavy (Level 3),0.291,0.214,0.076,73.7,0.114
+B1,B1 (YOLO11s-960),Occlusion,3,Heavy (Level 3),0.459,0.369,0.09,80.5,0.212
+B2,B2 (YOLO11s-1280),Occlusion,3,Heavy (Level 3),0.519,0.407,0.112,78.4,0.235
+B3,B3 (YOLO11m-960),Occlusion,3,Heavy (Level 3),0.512,0.419,0.093,81.9,0.243
+A,A (YOLO11n-640),Resolution Degrade,1,Mild (Level 1),0.291,0.289,0.001,99.5,0.156
+B1,B1 (YOLO11s-960),Resolution Degrade,1,Mild (Level 1),0.459,0.441,0.018,96.1,0.252
+B2,B2 (YOLO11s-1280),Resolution Degrade,1,Mild (Level 1),0.519,0.482,0.037,92.9,0.279
+B3,B3 (YOLO11m-960),Resolution Degrade,1,Mild (Level 1),0.512,0.491,0.021,95.9,0.282
+A,A (YOLO11n-640),Resolution Degrade,2,Medium (Level 2),0.291,0.297,-0.006,102.2,0.163
+B1,B1 (YOLO11s-960),Resolution Degrade,2,Medium (Level 2),0.459,0.407,0.052,88.8,0.231
+B2,B2 (YOLO11s-1280),Resolution Degrade,2,Medium (Level 2),0.519,0.437,0.082,84.2,0.254
+B3,B3 (YOLO11m-960),Resolution Degrade,2,Medium (Level 2),0.512,0.44,0.072,85.9,0.253
+A,A (YOLO11n-640),Resolution Degrade,3,Heavy (Level 3),0.291,0.267,0.024,91.9,0.14
+B1,B1 (YOLO11s-960),Resolution Degrade,3,Heavy (Level 3),0.459,0.292,0.167,63.5,0.154
+B2,B2 (YOLO11s-1280),Resolution Degrade,3,Heavy (Level 3),0.519,0.26,0.259,50.1,0.137
+B3,B3 (YOLO11m-960),Resolution Degrade,3,Heavy (Level 3),0.512,0.293,0.219,57.2,0.161

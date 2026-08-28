@@ -1,0 +1,2 @@
+model_name,model_path,model_format,num_parameters_m,model_size_mb,device,imgsz,iterations,warmup,inference_mean_ms,inference_std_ms,inference_min_ms,inference_max_ms,inference_p50_ms,inference_p95_ms,inference_p99_ms,preprocess_mean_ms,postprocess_mean_ms,e2e_latency_mean_ms,e2e_latency_std_ms,e2e_latency_p95_ms,fps_model,fps_e2e,avg_cpu_percent,peak_vram_mb,avg_ram_mb
+best,/home/host/aeroeval/experiments/baseline_yolo11n/weights/best.pt,PyTorch,2.59,5.2,CUDA:0,640,100,30,11.1,2.39,7.84,18.41,10.66,16.47,18.3,1.84,0.45,13.4,2.68,19.11,90.1,74.6,25.6,46.7,1536.4

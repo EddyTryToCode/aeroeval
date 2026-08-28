@@ -1,0 +1,3 @@
+Engine,Precision,Inference Latency (ms),E2E Latency (ms),Pure Model FPS,System E2E FPS,Size (MB),P95 Latency (ms),Device
+PyTorch (libtorch),FP32,10.35,12.23,96.6,81.7,5.2,18.27,CUDA:0
+ONNXRuntime,FP32,48.32,53.14,20.7,18.8,10.12,57.98,CUDA:0

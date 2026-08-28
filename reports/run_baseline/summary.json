@@ -1,0 +1,112 @@
+{
+  "model_name": "best",
+  "model_path": "experiments/baseline_yolo11n/weights/best.pt",
+  "timestamp": "2026-08-28 12:20:14",
+  "imgsz": 640,
+  "device": "0",
+  "detection": {
+    "mAP50": 0.2911,
+    "mAP50_95": 0.164,
+    "precision": 0.4137,
+    "recall": 0.3224,
+    "f1_score": 0.3624,
+    "per_class_metrics": {
+      "pedestrian": {
+        "class_id": 0,
+        "ap50_95": 0.1261
+      },
+      "people": {
+        "class_id": 1,
+        "ap50_95": 0.0729
+      },
+      "bicycle": {
+        "class_id": 2,
+        "ap50_95": 0.0214
+      },
+      "car": {
+        "class_id": 3,
+        "ap50_95": 0.4743
+      },
+      "van": {
+        "class_id": 4,
+        "ap50_95": 0.2235
+      },
+      "truck": {
+        "class_id": 5,
+        "ap50_95": 0.1812
+      },
+      "tricycle": {
+        "class_id": 6,
+        "ap50_95": 0.0928
+      },
+      "awning-tricycle": {
+        "class_id": 7,
+        "ap50_95": 0.0516
+      },
+      "bus": {
+        "class_id": 8,
+        "ap50_95": 0.2781
+      },
+      "motor": {
+        "class_id": 9,
+        "ap50_95": 0.118
+      }
+    }
+  },
+  "efficiency": {
+    "model_name": "best",
+    "model_path": "experiments/baseline_yolo11n/weights/best.pt",
+    "model_format": "PyTorch",
+    "num_parameters_m": 2.59,
+    "model_size_mb": 5.2,
+    "device": "CUDA:0",
+    "imgsz": 640,
+    "iterations": 60,
+    "warmup": 25,
+    "inference_mean_ms": 11.55,
+    "inference_std_ms": 3.08,
+    "inference_min_ms": 8.52,
+    "inference_max_ms": 23.74,
+    "inference_p50_ms": 10.91,
+    "inference_p95_ms": 18.21,
+    "inference_p99_ms": 22.99,
+    "preprocess_mean_ms": 1.87,
+    "postprocess_mean_ms": 0.63,
+    "e2e_latency_mean_ms": 14.05,
+    "e2e_latency_std_ms": 3.67,
+    "e2e_latency_p95_ms": 23.1,
+    "fps_model": 86.6,
+    "fps_e2e": 71.2,
+    "avg_cpu_percent": 24.1,
+    "peak_vram_mb": 56.5,
+    "avg_ram_mb": 1801.7
+  },
+  "recommendation": {
+    "profile": "real_time_uav",
+    "profile_description": "Balanced high-speed UAV tracking with robustness to camera motion and blur",
+    "weights": {
+      "accuracy": 0.3,
+      "latency": 0.3,
+      "robustness": 0.25,
+      "memory": 0.15
+    },
+    "recommended_model": "best",
+    "best_score": 1.0,
+    "justification": "Model 'best' ranks #1 for profile 'real_time_uav' (Composite Score: 1.000). It delivers 29.11% accuracy at 14.05 ms latency (71.2 FPS), maintaining 78.5% robustness under environmental corruptions with a compact footprint of 5.2 MB.",
+    "rankings": [
+      {
+        "model": "best",
+        "score": 1.0,
+        "accuracy": 29.11,
+        "latency_ms": 14.05,
+        "fps": 71.2,
+        "robustness_retention": 78.5,
+        "memory_mb": 5.2,
+        "norm_accuracy": 1.0,
+        "norm_latency": 1.0,
+        "norm_robustness": 1.0,
+        "norm_memory": 1.0
+      }
+    ]
+  }
+}

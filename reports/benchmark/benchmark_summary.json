@@ -1,0 +1,30 @@
+[
+  {
+    "model_name": "best",
+    "model_path": "/home/host/aeroeval/experiments/baseline_yolo11n/weights/best.pt",
+    "model_format": "PyTorch",
+    "num_parameters_m": 2.59,
+    "model_size_mb": 5.2,
+    "device": "CUDA:0",
+    "imgsz": 640,
+    "iterations": 100,
+    "warmup": 30,
+    "inference_mean_ms": 11.1,
+    "inference_std_ms": 2.39,
+    "inference_min_ms": 7.84,
+    "inference_max_ms": 18.41,
+    "inference_p50_ms": 10.66,
+    "inference_p95_ms": 16.47,
+    "inference_p99_ms": 18.3,
+    "preprocess_mean_ms": 1.84,
+    "postprocess_mean_ms": 0.45,
+    "e2e_latency_mean_ms": 13.4,
+    "e2e_latency_std_ms": 2.68,
+    "e2e_latency_p95_ms": 19.11,
+    "fps_model": 90.1,
+    "fps_e2e": 74.6,
+    "avg_cpu_percent": 25.6,
+    "peak_vram_mb": 46.7,
+    "avg_ram_mb": 1536.4
+  }
+]

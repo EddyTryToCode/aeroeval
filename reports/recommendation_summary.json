@@ -1,0 +1,203 @@
+{
+  "real_time_uav": {
+    "profile": "real_time_uav",
+    "profile_description": "Balanced high-speed UAV tracking with robustness to camera motion and blur",
+    "weights": {
+      "accuracy": 0.3,
+      "latency": 0.3,
+      "robustness": 0.25,
+      "memory": 0.15
+    },
+    "recommended_model": "Exp B2 (YOLO11s-1280)",
+    "best_score": 0.6554,
+    "justification": "Model 'Exp B2 (YOLO11s-1280)' ranks #1 for profile 'real_time_uav' (Composite Score: 0.655). It delivers 46.8% accuracy at 38.5 ms latency (26.0 FPS), maintaining 88.6% robustness under environmental corruptions with a compact footprint of 18.4 MB.",
+    "rankings": [
+      {
+        "model": "Exp B2 (YOLO11s-1280)",
+        "score": 0.6554,
+        "accuracy": 46.8,
+        "latency_ms": 38.5,
+        "fps": 26.0,
+        "robustness_retention": 88.6,
+        "memory_mb": 18.4,
+        "norm_accuracy": 0.959,
+        "norm_latency": 0.125,
+        "norm_robustness": 0.953,
+        "norm_memory": 0.612
+      },
+      {
+        "model": "Exp B1 (YOLO11s-960)",
+        "score": 0.592,
+        "accuracy": 43.1,
+        "latency_ms": 23.8,
+        "fps": 42.0,
+        "robustness_retention": 84.2,
+        "memory_mb": 18.4,
+        "norm_accuracy": 0.582,
+        "norm_latency": 0.638,
+        "norm_robustness": 0.538,
+        "norm_memory": 0.612
+      },
+      {
+        "model": "Exp B3 (YOLO11m-960)",
+        "score": 0.55,
+        "accuracy": 47.2,
+        "latency_ms": 42.1,
+        "fps": 23.8,
+        "robustness_retention": 89.1,
+        "memory_mb": 39.2,
+        "norm_accuracy": 1.0,
+        "norm_latency": 0.0,
+        "norm_robustness": 1.0,
+        "norm_memory": 0.0
+      },
+      {
+        "model": "Exp A (YOLO11n-640)",
+        "score": 0.45,
+        "accuracy": 37.4,
+        "latency_ms": 13.4,
+        "fps": 74.6,
+        "robustness_retention": 78.5,
+        "memory_mb": 5.2,
+        "norm_accuracy": 0.0,
+        "norm_latency": 1.0,
+        "norm_robustness": 0.0,
+        "norm_memory": 1.0
+      }
+    ]
+  },
+  "high_accuracy": {
+    "profile": "high_accuracy",
+    "profile_description": "High-altitude reconnaissance prioritizing small-object precision and recall",
+    "weights": {
+      "accuracy": 0.5,
+      "latency": 0.15,
+      "robustness": 0.25,
+      "memory": 0.1
+    },
+    "recommended_model": "Exp B2 (YOLO11s-1280)",
+    "best_score": 0.7978,
+    "justification": "Model 'Exp B2 (YOLO11s-1280)' ranks #1 for profile 'high_accuracy' (Composite Score: 0.798). It delivers 46.8% accuracy at 38.5 ms latency (26.0 FPS), maintaining 88.6% robustness under environmental corruptions with a compact footprint of 18.4 MB.",
+    "rankings": [
+      {
+        "model": "Exp B2 (YOLO11s-1280)",
+        "score": 0.7978,
+        "accuracy": 46.8,
+        "latency_ms": 38.5,
+        "fps": 26.0,
+        "robustness_retention": 88.6,
+        "memory_mb": 18.4,
+        "norm_accuracy": 0.959,
+        "norm_latency": 0.125,
+        "norm_robustness": 0.953,
+        "norm_memory": 0.612
+      },
+      {
+        "model": "Exp B3 (YOLO11m-960)",
+        "score": 0.75,
+        "accuracy": 47.2,
+        "latency_ms": 42.1,
+        "fps": 23.8,
+        "robustness_retention": 89.1,
+        "memory_mb": 39.2,
+        "norm_accuracy": 1.0,
+        "norm_latency": 0.0,
+        "norm_robustness": 1.0,
+        "norm_memory": 0.0
+      },
+      {
+        "model": "Exp B1 (YOLO11s-960)",
+        "score": 0.5821,
+        "accuracy": 43.1,
+        "latency_ms": 23.8,
+        "fps": 42.0,
+        "robustness_retention": 84.2,
+        "memory_mb": 18.4,
+        "norm_accuracy": 0.582,
+        "norm_latency": 0.638,
+        "norm_robustness": 0.538,
+        "norm_memory": 0.612
+      },
+      {
+        "model": "Exp A (YOLO11n-640)",
+        "score": 0.25,
+        "accuracy": 37.4,
+        "latency_ms": 13.4,
+        "fps": 74.6,
+        "robustness_retention": 78.5,
+        "memory_mb": 5.2,
+        "norm_accuracy": 0.0,
+        "norm_latency": 1.0,
+        "norm_robustness": 0.0,
+        "norm_memory": 1.0
+      }
+    ]
+  },
+  "edge_device": {
+    "profile": "edge_device",
+    "profile_description": "Low-power companion microcontrollers / Jetson Nano with strict memory limits",
+    "weights": {
+      "accuracy": 0.2,
+      "latency": 0.25,
+      "robustness": 0.15,
+      "memory": 0.4
+    },
+    "recommended_model": "Exp A (YOLO11n-640)",
+    "best_score": 0.65,
+    "justification": "Model 'Exp A (YOLO11n-640)' ranks #1 for profile 'edge_device' (Composite Score: 0.650). It delivers 37.4% accuracy at 13.4 ms latency (74.6 FPS), maintaining 78.5% robustness under environmental corruptions with a compact footprint of 5.2 MB.",
+    "rankings": [
+      {
+        "model": "Exp A (YOLO11n-640)",
+        "score": 0.65,
+        "accuracy": 37.4,
+        "latency_ms": 13.4,
+        "fps": 74.6,
+        "robustness_retention": 78.5,
+        "memory_mb": 5.2,
+        "norm_accuracy": 0.0,
+        "norm_latency": 1.0,
+        "norm_robustness": 0.0,
+        "norm_memory": 1.0
+      },
+      {
+        "model": "Exp B2 (YOLO11s-1280)",
+        "score": 0.6108,
+        "accuracy": 46.8,
+        "latency_ms": 38.5,
+        "fps": 26.0,
+        "robustness_retention": 88.6,
+        "memory_mb": 18.4,
+        "norm_accuracy": 0.959,
+        "norm_latency": 0.125,
+        "norm_robustness": 0.953,
+        "norm_memory": 0.612
+      },
+      {
+        "model": "Exp B1 (YOLO11s-960)",
+        "score": 0.6011,
+        "accuracy": 43.1,
+        "latency_ms": 23.8,
+        "fps": 42.0,
+        "robustness_retention": 84.2,
+        "memory_mb": 18.4,
+        "norm_accuracy": 0.582,
+        "norm_latency": 0.638,
+        "norm_robustness": 0.538,
+        "norm_memory": 0.612
+      },
+      {
+        "model": "Exp B3 (YOLO11m-960)",
+        "score": 0.35,
+        "accuracy": 47.2,
+        "latency_ms": 42.1,
+        "fps": 23.8,
+        "robustness_retention": 89.1,
+        "memory_mb": 39.2,
+        "norm_accuracy": 1.0,
+        "norm_latency": 0.0,
+        "norm_robustness": 1.0,
+        "norm_memory": 0.0
+      }
+    ]
+  }
+}

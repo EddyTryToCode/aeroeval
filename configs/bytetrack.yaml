@@ -1,0 +1,8 @@
+# ByteTrack configuration for Drone Aerial Tracking
+tracker_type: bytetrack
+track_high_thresh: 0.25      # High confidence threshold for first association
+track_low_thresh: 0.1        # Low confidence threshold for second association
+new_track_thresh: 0.3        # Threshold to create a new track
+track_buffer: 30             # Number of frames to keep lost tracks
+match_thresh: 0.8            # Matching IoU threshold
+fuse_score: True             # Fuse detection score with matching cost

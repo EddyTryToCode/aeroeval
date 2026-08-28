@@ -1,0 +1,35 @@
+# AeroEval Deployment Profile Configuration
+profiles:
+  real_time_uav:
+    description: "High-speed UAV obstacle avoidance & target tracking"
+    weights:
+      accuracy: 0.30
+      latency: 0.30
+      robustness: 0.25
+      memory: 0.15
+    constraints:
+      min_fps: 30.0
+      max_latency_ms: 33.3
+      max_memory_mb: 25.0
+
+  high_accuracy:
+    description: "High-altitude reconnaissance & fine-grained search and rescue"
+    weights:
+      accuracy: 0.50
+      latency: 0.15
+      robustness: 0.25
+      memory: 0.10
+    constraints:
+      min_map50: 0.40
+      min_fps: 15.0
+
+  edge_device:
+    description: "Battery-constrained edge computing (e.g. Jetson Nano / Raspberry Pi)"
+    weights:
+      accuracy: 0.20
+      latency: 0.25
+      robustness: 0.15
+      memory: 0.40
+    constraints:
+      max_vram_mb: 512.0
+      max_model_size_mb: 10.0

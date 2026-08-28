@@ -1,0 +1,18 @@
+# AeroEval Real-Time Benchmarking Configuration
+benchmark_settings:
+  warmup_iterations: 50
+  benchmark_iterations: 200
+  resolutions: [640, 960, 1280]
+  device: "0"
+  output_dir: "reports/benchmark"
+
+profiling_metrics:
+  - "model_latency_ms"
+  - "preprocess_time_ms"
+  - "postprocess_time_ms"
+  - "e2e_latency_ms"
+  - "fps_model"
+  - "fps_e2e"
+  - "cpu_usage_percent"
+  - "peak_vram_mb"
+  - "model_size_mb"

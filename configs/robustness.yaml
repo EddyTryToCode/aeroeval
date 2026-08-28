@@ -1,0 +1,25 @@
+# AeroEval Robustness Evaluation Configuration
+corruptions:
+  - name: "Gaussian Blur"
+    severities: [1, 2, 3, 4]
+  - name: "Motion Blur"
+    severities: [1, 2, 3, 4]
+  - name: "Low Light"
+    severities: [1, 2, 3, 4]
+  - name: "Overexposure"
+    severities: [1, 2, 3, 4]
+  - name: "Gaussian Noise"
+    severities: [1, 2, 3, 4]
+  - name: "JPEG Compression"
+    severities: [1, 2, 3, 4]
+  - name: "Occlusion"
+    severities: [1, 2, 3, 4]
+  - name: "Resolution Degrade"
+    severities: [1, 2, 3, 4]
+
+eval_settings:
+  imgsz: 640
+  device: 0
+  sample_limit: 100
+  iou_threshold: 0.5
+  output_dir: "reports/robustness"

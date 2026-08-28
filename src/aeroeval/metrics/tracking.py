@@ -183,3 +183,10 @@ class MOTEvaluator:
             "ML_%": round(float(ml_pct), 1),
             "Total_Unique_Tracks": num_gt_trajs
         }
+
+
+def evaluate_tracking_sequence(gt_frames: dict, pred_frames: dict, iou_threshold: float = 0.5):
+    """Functional wrapper for MOTEvaluator.evaluate_sequence."""
+    evaluator = MOTEvaluator(iou_threshold=iou_threshold)
+    return evaluator.evaluate_sequence(gt_frames, pred_frames)
+

@@ -2,10 +2,7 @@
 Unit tests for ModelRegistry and ModelRunner.
 """
 
-from pathlib import Path
-import pytest
-from aeroeval.models.registry import ModelInfo, ModelRegistry
-from aeroeval.models.runner import ModelRunner
+from aeroeval.models.registry import ModelRegistry
 
 
 def test_model_registry_crud(tmp_path):
@@ -17,7 +14,7 @@ def test_model_registry_crud(tmp_path):
     weight_file.write_text("dummy")
 
     # Register
-    info = registry.register(
+    registry.register(
         name="test_model",
         path=weight_file,
         format="PyTorch",

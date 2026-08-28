@@ -3,15 +3,15 @@ Unit tests for AeroEval Metrics.
 """
 
 import numpy as np
-import pytest
+
 from aeroeval.metrics.detection import (
     SIZE_THRESHOLDS,
     box_area,
     compute_iou_matrix,
     evaluate_by_object_size,
 )
-from aeroeval.metrics.error_analysis import compute_iou_single, analyze_failure_taxonomy
-from aeroeval.metrics.tracking import compute_iou_batch, MOTEvaluator, evaluate_tracking_sequence
+from aeroeval.metrics.error_analysis import analyze_failure_taxonomy
+from aeroeval.metrics.tracking import evaluate_tracking_sequence
 
 
 def test_compute_iou_matrix_perfect_overlap():

@@ -3,7 +3,8 @@ Unit tests for ModelRecommendationEngine.
 """
 
 import pytest
-from aeroeval.reporting.recommendation import ModelRecommendationEngine, DEPLOYMENT_PROFILES
+
+from aeroeval.reporting.recommendation import DEPLOYMENT_PROFILES, ModelRecommendationEngine
 
 
 @pytest.fixture

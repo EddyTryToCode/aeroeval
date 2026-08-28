@@ -18,16 +18,14 @@ Outputs:
 - reports/size_gain_relative_chart.png
 """
 
-import sys
 from pathlib import Path
-import cv2
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
 import torch
 from PIL import Image
-from tqdm import tqdm
 from ultralytics import YOLO
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -222,7 +220,7 @@ def load_val_ground_truth():
 def extract_predictions(model: YOLO, imgsz: int, batch_size: int = 16):
     val_img_dir = DATA_DIR / "images" / "val"
     img_files = sorted(list(val_img_dir.glob("*.jpg")))
-    
+
     pred_by_img = {}
     device = 0 if torch.cuda.is_available() else "cpu"
 
@@ -281,7 +279,7 @@ def run_object_size_eval():
         for size_cat in ["small", "medium", "large", "all"]:
             # Evaluate at IoU=0.5
             ap50, p, r, gt_count = calculate_ap_for_size(gt_by_img, preds, size_cat, iou_thresh=0.5)
-            
+
             # Evaluate across IoU [0.5:0.95] for AP50-95
             iou_aps = []
             for iou_val in np.arange(0.50, 0.96, 0.05):

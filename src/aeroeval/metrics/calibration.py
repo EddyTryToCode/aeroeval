@@ -9,12 +9,8 @@ Computes:
 5. Expected Calibration Error (ECE) & Reliability Diagram
 """
 
-import json
-from pathlib import Path
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 
 
 def compute_iou_batch(boxes1, boxes2):

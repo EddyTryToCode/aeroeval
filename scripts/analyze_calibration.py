@@ -18,14 +18,12 @@ Outputs:
 
 import json
 from pathlib import Path
-import cv2
+
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import seaborn as sns
 import torch
 from PIL import Image
-from tqdm import tqdm
 from ultralytics import YOLO
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -34,6 +32,7 @@ REPORTS_DIR = ROOT_DIR / "reports"
 OUTPUT_DIR = REPORTS_DIR / "calibration"
 
 import sys
+
 sys.path.append(str(ROOT_DIR / "src"))
 from aeroeval.metrics.calibration import evaluate_calibration
 
@@ -221,7 +220,7 @@ def generate_calibration_charts(df_sweeps: pd.DataFrame, preds_dict: dict, relia
 
     # 2. Confidence Distribution of True Positives (Correct) vs False Positives (Incorrect)
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
-    
+
     for idx, exp in enumerate(["B1", "B2"]):
         ax = axes[idx]
         df_p = preds_dict[exp]

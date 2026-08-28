@@ -6,7 +6,7 @@ Provides a unified interface for inference across different backends.
 
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
-import cv2
+
 import numpy as np
 import torch
 from ultralytics import YOLO

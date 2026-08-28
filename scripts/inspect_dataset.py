@@ -18,11 +18,11 @@ Generates:
 - reports/image_resolution_distribution.png
 """
 
-import os
 from pathlib import Path
-import pandas as pd
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import seaborn as sns
 from PIL import Image
 from tqdm import tqdm
@@ -62,7 +62,7 @@ def parse_visdrone_split(split_name: str, split_dir: Path):
     ann_dir = split_dir / "annotations"
 
     img_files = sorted(list(img_dir.glob("*.jpg")))
-    
+
     objects_list = []
     images_list = []
 
@@ -70,7 +70,7 @@ def parse_visdrone_split(split_name: str, split_dir: Path):
 
     for img_path in tqdm(img_files, desc=f"Processing {split_name}"):
         ann_path = ann_dir / f"{img_path.stem}.txt"
-        
+
         with Image.open(img_path) as img:
             img_w, img_h = img.size
 
@@ -197,7 +197,7 @@ def generate_plots(df_objects: pd.DataFrame, df_images: pd.DataFrame, reports_di
     for p in ax.patches:
         height = p.get_height()
         if not np.isnan(height) and height > 0:
-            total_split = len(df_valid[df_valid["split"] == p.get_label()]) if p.get_label() in df_valid["split"].unique() else len(df_valid)
+            len(df_valid[df_valid["split"] == p.get_label()]) if p.get_label() in df_valid["split"].unique() else len(df_valid)
             ax.annotate(f'{int(height)}',
                         (p.get_x() + p.get_width() / 2., height),
                         ha='center', va='bottom', fontsize=10, xytext=(0, 5),

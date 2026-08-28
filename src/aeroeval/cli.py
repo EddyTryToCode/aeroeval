@@ -8,12 +8,10 @@ Usage:
 """
 
 import argparse
-import sys
-from pathlib import Path
 
+from aeroeval.metrics.efficiency import benchmark_model_efficiency
 from aeroeval.pipeline.evaluate import EvaluationPipeline
 from aeroeval.reporting.recommendation import ModelRecommendationEngine
-from aeroeval.metrics.efficiency import benchmark_model_efficiency
 
 
 def create_parser() -> argparse.ArgumentParser:
@@ -78,7 +76,7 @@ def main():
         # Load experiment metrics from reports
         print(f"--> Running recommendation engine for profile: '{args.profile}'...")
         rec_engine = ModelRecommendationEngine()
-        
+
         # Candidate models from earlier experiments
         candidates = [
             {"name": "Exp A (YOLO11n-640)", "accuracy": 37.4, "latency_ms": 13.4, "robustness": 78.5, "memory_mb": 5.2},

@@ -64,9 +64,8 @@ def benchmark_model_efficiency(
 
     # Load model
     is_onnx = model_path.suffix.lower() == ".onnx"
-    
+
     num_params = 0.0
-    gflops = 0.0
 
     if not is_onnx:
         model = YOLO(str(model_path))
@@ -98,8 +97,6 @@ def benchmark_model_efficiency(
 
     # Benchmark loop
     for _ in range(iterations):
-        t_e2e_start = time.perf_counter()
-
         # Step 1: Preprocess simulation (resize / normalize / tensor transfer)
         t_prep_start = time.perf_counter()
         im = cv2.resize(raw_img, (imgsz, imgsz))
@@ -136,8 +133,8 @@ def benchmark_model_efficiency(
         post_ms = max(0.1, pipe_ms - inf_ms - prep_ms)
         postprocess_times.append(post_ms)
 
-        t_e2e_end = time.perf_counter()
         e2e_times.append(prep_ms + inf_ms + post_ms)
+
 
         # Resource monitoring
         cpu_usages.append(psutil.cpu_percent(interval=None))

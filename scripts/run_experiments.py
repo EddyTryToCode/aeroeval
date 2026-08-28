@@ -17,6 +17,7 @@ Also measures:
 import argparse
 import time
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import torch
@@ -110,14 +111,14 @@ def benchmark_fps(model: YOLO, imgsz: int, device: str = "0", warmup: int = 20, 
 def train_experiment(exp_id: str):
     exp = EXPERIMENTS[exp_id]
     cfg_file = exp["config"]
-    
+
     with open(cfg_file, "r", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
 
-    print(f"\n=======================================================")
+    print("\n=======================================================")
     print(f"       STARTING EXPERIMENT {exp_id}: {exp['name']}")
-    print(f"=======================================================")
-    
+    print("=======================================================")
+
     model = YOLO(cfg["model"])
     model.train(
         data=cfg["data"],
@@ -153,7 +154,7 @@ def evaluate_and_build_matrix():
             if c.exists():
                 weights_path = c
                 break
-        
+
         row = {
             "Experiment": exp_id,
             "Model": info["model"].replace(".pt", "").upper(),
@@ -171,7 +172,7 @@ def evaluate_and_build_matrix():
         if weights_path and weights_path.exists():
             print(f"\n[+] Evaluating weights for Exp {exp_id}: {weights_path}")
             model = YOLO(str(weights_path))
-            
+
             # Validation metrics
             metrics = model.val(
                 data="configs/visdrone.yaml",
@@ -199,7 +200,7 @@ def evaluate_and_build_matrix():
 
     df_matrix = pd.DataFrame(matrix_rows)
     df_matrix.to_csv(REPORTS_DIR / "experiment_matrix.csv", index=False)
-    
+
     # Save markdown version
     md_table = df_matrix.to_markdown(index=False)
     (REPORTS_DIR / "experiment_matrix.md").write_text(md_table, encoding="utf-8")

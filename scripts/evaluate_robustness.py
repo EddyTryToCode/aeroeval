@@ -25,10 +25,11 @@ Outputs:
 - reports/robustness_comparison_b1_b2.png
 """
 
-import sys
 import shutil
+import sys
 import tempfile
 from pathlib import Path
+
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
@@ -36,7 +37,6 @@ import pandas as pd
 import seaborn as sns
 import torch
 import yaml
-from tqdm import tqdm
 from ultralytics import YOLO
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -128,7 +128,7 @@ def run_robustness_benchmark(sample_val_size: int = 50):
     val_img_dir = DATA_DIR / "images" / "val"
     val_lbl_dir = DATA_DIR / "labels" / "val"
     all_val_imgs = sorted(list(val_img_dir.glob("*.jpg")))
-    
+
     np.random.seed(42)
     selected_imgs = list(np.random.choice(all_val_imgs, min(sample_val_size, len(all_val_imgs)), replace=False))
     print(f"[+] Using deterministic sample of {len(selected_imgs)} val images.")

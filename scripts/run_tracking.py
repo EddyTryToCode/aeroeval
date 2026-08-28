@@ -19,8 +19,8 @@ Outputs:
 
 import sys
 import time
-from collections import defaultdict
 from pathlib import Path
+
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
@@ -241,7 +241,7 @@ def generate_tracking_charts(df_track: pd.DataFrame, rendered_store: dict):
         value_name="Score"
     )
     df_melt["Config"] = df_melt["Detector"] + " + " + df_melt["Tracker"]
-    
+
     ax = sns.barplot(
         data=df_melt,
         x="Config",
@@ -266,7 +266,7 @@ def generate_tracking_charts(df_track: pd.DataFrame, rendered_store: dict):
 
     # 2. Tracking FPS vs Latency Tradeoff
     plt.figure(figsize=(10, 5))
-    ax2 = sns.scatterplot(
+    sns.scatterplot(
         data=df_track,
         x="Latency_ms",
         y="IDF1",

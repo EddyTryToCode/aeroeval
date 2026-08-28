@@ -18,16 +18,14 @@ Usage:
 
 import argparse
 import sys
-import time
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict
 
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-import torch
 from ultralytics import YOLO
 
 # Add src to sys.path
@@ -257,7 +255,7 @@ Exported **{pt_path.name}** to standard **ONNX** format for embedded and edge UA
     # Plot comparison bar chart
     plt.figure(figsize=(9, 4.5), dpi=300)
     sns.set_theme(style="whitegrid")
-    
+
     engines = [d["Engine"] for d in comparison_data]
     latencies = [d["Inference Latency (ms)"] for d in comparison_data]
     fps_vals = [d["Pure Model FPS"] for d in comparison_data]
@@ -266,13 +264,13 @@ Exported **{pt_path.name}** to standard **ONNX** format for embedded and edge UA
     x = np.arange(len(engines))
     width = 0.35
 
-    rects1 = ax1.bar(x - width/2, latencies, width, label='Inference Latency (ms)', color='#ef4444')
+    ax1.bar(x - width/2, latencies, width, label='Inference Latency (ms)', color='#ef4444')
     ax1.set_ylabel('Latency (ms - Lower is better)', color='#ef4444', fontweight='bold')
     ax1.set_xticks(x)
     ax1.set_xticklabels(engines, fontweight='bold')
 
     ax2 = ax1.twinx()
-    rects2 = ax2.bar(x + width/2, fps_vals, width, label='Throughput (FPS)', color='#10b981')
+    ax2.bar(x + width/2, fps_vals, width, label='Throughput (FPS)', color='#10b981')
     ax2.set_ylabel('Throughput (FPS - Higher is better)', color='#10b981', fontweight='bold')
 
     plt.title("PyTorch vs ONNXRuntime Optimization Benchmark", fontsize=12, fontweight='bold', pad=12)

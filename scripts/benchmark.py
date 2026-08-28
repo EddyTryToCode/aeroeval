@@ -52,9 +52,9 @@ def plot_latency_breakdown(bench_results: List[Dict], output_path: Path):
     y_pos = np.arange(len(names))
     height = 0.55
 
-    p1 = plt.barh(y_pos, prep, height, label="Preprocessing (ms)", color="#3b82f6")
-    p2 = plt.barh(y_pos, inf, height, left=prep, label="Pure Inference (ms)", color="#10b981")
-    p3 = plt.barh(y_pos, post, height, left=np.array(prep) + np.array(inf), label="Postprocessing / NMS (ms)", color="#f59e0b")
+    plt.barh(y_pos, prep, height, label="Preprocessing (ms)", color="#3b82f6")
+    plt.barh(y_pos, inf, height, left=prep, label="Pure Inference (ms)", color="#10b981")
+    plt.barh(y_pos, post, height, left=np.array(prep) + np.array(inf), label="Postprocessing / NMS (ms)", color="#f59e0b")
 
     for i in range(len(names)):
         total_e2e = bench_results[i]["e2e_latency_mean_ms"]
@@ -77,7 +77,7 @@ def plot_fps_over_time(time_series: Dict, model_name: str, output_path: Path):
 
     e2e_lat = np.array(time_series["e2e_ms"])
     fps_series = 1000.0 / np.maximum(e2e_lat, 0.001)
-    
+
     # Moving average window
     window = 10
     fps_smooth = pd.Series(fps_series).rolling(window=window, min_periods=1).mean()
@@ -86,7 +86,7 @@ def plot_fps_over_time(time_series: Dict, model_name: str, output_path: Path):
 
     plt.plot(iterations, fps_series, alpha=0.35, color="#0284c7", label="Instantaneous FPS")
     plt.plot(iterations, fps_smooth, color="#0369a1", linewidth=2.2, label=f"Moving Avg (window={window})")
-    
+
     mean_fps = np.mean(fps_series)
     plt.axhline(mean_fps, color="#dc2626", linestyle="--", linewidth=1.5, label=f"Mean: {mean_fps:.1f} FPS")
 
@@ -116,7 +116,7 @@ def plot_resource_usage(time_series: Dict, model_name: str, output_path: Path):
     color_mem = "#7c3aed"
     vram_data = time_series.get("vram_mb", [])
     has_vram = any(v > 0 for v in vram_data)
-    
+
     if has_vram:
         ax2.set_ylabel("VRAM Allocated (MB)", color=color_mem, fontsize=10, fontweight="bold")
         line2 = ax2.plot(iterations, vram_data, color=color_mem, linewidth=2.0, label="GPU VRAM (MB)")
@@ -150,7 +150,7 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     model_paths = args.models if args.models else [args.model]
-    
+
     all_summaries = []
     first_time_series = None
     first_model_name = ""
@@ -174,7 +174,7 @@ def main():
             warmup=args.warmup,
             iterations=args.iterations
         )
-        
+
         ts = res.pop("time_series")
         if first_time_series is None:
             first_time_series = ts

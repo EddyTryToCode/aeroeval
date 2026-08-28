@@ -10,9 +10,8 @@ Evaluates candidate UAV vision models across multiple operational profiles:
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
-import numpy as np
-import pandas as pd
 
+import numpy as np
 
 DEPLOYMENT_PROFILES = {
     "real_time_uav": {

@@ -11,9 +11,9 @@ Features:
 """
 
 import argparse
-import shutil
 import time
 from pathlib import Path
+
 import torch
 import yaml
 from ultralytics import YOLO
@@ -26,7 +26,7 @@ def check_and_adjust_gpu(batch_size: int, device_id: int = 0) -> int:
     if not torch.cuda.is_available():
         print("[!] No GPU detected. Falling back to CPU.")
         return 4
-    
+
     vram_gb = torch.cuda.get_device_properties(device_id).total_memory / (1024 ** 3)
     gpu_name = torch.cuda.get_device_name(device_id)
     print(f"[+] Detected GPU: {gpu_name} with {vram_gb:.2f} GB VRAM")
@@ -71,12 +71,12 @@ def main():
     print("=" * 60 + "\n")
 
     start_time = time.time()
-    
+
     # Initialize YOLO model
     model = YOLO(config["model"])
 
     # Train model
-    results = model.train(
+    model.train(
         data=config["data"],
         epochs=config["epochs"],
         imgsz=config["imgsz"],

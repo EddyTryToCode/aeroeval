@@ -13,16 +13,12 @@ Orchestrates complete multi-modal evaluation across:
 
 import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
-import yaml
+from typing import Any, Dict, Union
 
-from aeroeval.metrics.calibration import evaluate_calibration
 from aeroeval.metrics.detection import (
-    evaluate_by_object_size,
     evaluate_detection_model,
 )
 from aeroeval.metrics.efficiency import benchmark_model_efficiency
-from aeroeval.metrics.error_analysis import analyze_failure_taxonomy
 from aeroeval.reporting.recommendation import ModelRecommendationEngine
 from aeroeval.reporting.report import EvaluationReport
 

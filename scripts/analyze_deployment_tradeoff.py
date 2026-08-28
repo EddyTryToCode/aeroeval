@@ -23,6 +23,7 @@ Outputs:
 """
 
 from pathlib import Path
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -162,7 +163,7 @@ def run_deployment_analysis():
     df_rank.to_csv(REPORTS_DIR / "deployment_profile_rankings.csv", index=False)
 
     pivot_rank = df_rank.pivot(index="Deployment_Profile", columns="Experiment", values="Composite_Score")
-    
+
     print("\n" + "=" * 90)
     print("                 DEPLOYMENT PROFILE SELECTION MATRIX (Score: 0-100)")
     print("=" * 90)
@@ -193,7 +194,7 @@ def generate_deployment_charts(df_raw: pd.DataFrame, df_norm: pd.DataFrame):
 
     # 1. Pareto Frontier: mAP50 vs Inference Latency
     plt.figure(figsize=(10, 6))
-    ax = sns.scatterplot(
+    sns.scatterplot(
         data=df_raw,
         x="latency_ms",
         y="mAP50",

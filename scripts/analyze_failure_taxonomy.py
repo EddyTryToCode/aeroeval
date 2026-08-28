@@ -23,14 +23,13 @@ Outputs:
 """
 
 from pathlib import Path
-import cv2
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
 import torch
 from PIL import Image
-from tqdm import tqdm
 from ultralytics import YOLO
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -75,7 +74,7 @@ EXPERIMENTS = {
 def load_raw_val_annotations():
     ann_dir = RAW_VAL_DIR / "annotations"
     img_dir = RAW_VAL_DIR / "images"
-    
+
     gt_dict = {}
     valid_classes = {1:0, 2:1, 3:2, 4:3, 5:4, 6:5, 7:6, 8:7, 9:8, 10:9}
 
@@ -147,7 +146,7 @@ def extract_model_errors(model: YOLO, imgsz: int, gt_dict: dict, conf_thresh: fl
 
     total_gt = 0
     total_preds = 0
-    
+
     tp_count = 0
     fp_background = 0
     fp_class_confusion = 0
@@ -314,7 +313,7 @@ def generate_taxonomy_charts(df_tax: pd.DataFrame, matrix_store: dict):
     # 1. Error Composition Stacked Bar Chart
     plt.figure(figsize=(12, 6))
     df_plot = df_tax[["Experiment", "Small_Object_Miss", "Occlusion_Miss", "Class_Confusion_FP", "Background_FP"]].set_index("Experiment")
-    ax = df_plot.plot(kind="bar", stacked=True, figsize=(11, 6), colormap="Set2")
+    df_plot.plot(kind="bar", stacked=True, figsize=(11, 6), colormap="Set2")
     plt.title("Failure Mode Distribution (Total Error Count by Experiment)", fontsize=13, fontweight="bold", pad=15)
     plt.xlabel("Experiment", fontsize=12)
     plt.ylabel("Total Error Count", fontsize=12)

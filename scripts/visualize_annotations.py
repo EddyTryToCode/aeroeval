@@ -13,6 +13,7 @@ Features:
 import argparse
 import random
 from pathlib import Path
+
 import cv2
 import numpy as np
 from tqdm import tqdm
@@ -124,7 +125,7 @@ def main():
     lbl_dir = DATA_DIR / "labels" / args.split
 
     if not img_dir.exists() or not lbl_dir.exists():
-        print(f"Error: Directory not found. Run scripts/convert_visdrone.py first.")
+        print("Error: Directory not found. Run scripts/convert_visdrone.py first.")
         return
 
     all_images = sorted(list(img_dir.glob("*.jpg")))

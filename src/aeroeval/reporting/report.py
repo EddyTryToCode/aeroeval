@@ -9,7 +9,8 @@ Compiles complete multi-modal evaluation outputs into:
 
 import json
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, Union
+
 import pandas as pd
 
 
@@ -68,7 +69,6 @@ class EvaluationReport:
         timestamp = data.get("timestamp", "N/A")
         det = data.get("detection", {})
         eff = data.get("efficiency", {})
-        rob = data.get("robustness", {})
         rec = data.get("recommendation", {})
 
         map50 = det.get("mAP50", "N/A")
@@ -78,7 +78,6 @@ class EvaluationReport:
         vram = eff.get("peak_vram_mb", "N/A")
         cpu = eff.get("avg_cpu_percent", "N/A")
 
-        rec_model = rec.get("recommended_model", model_name)
         rec_just = rec.get("justification", "Comprehensive automated evaluation complete.")
 
         return f"""<!DOCTYPE html>

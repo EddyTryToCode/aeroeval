@@ -12,8 +12,8 @@ Computes MOT Metrics:
 """
 
 from collections import defaultdict
+
 import numpy as np
-import pandas as pd
 
 
 def compute_iou_batch(boxes1, boxes2):

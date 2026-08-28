@@ -14,10 +14,9 @@ Outputs:
 - reports/weak_classes_improvement.png
 """
 
-import sys
 from pathlib import Path
+
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import seaborn as sns
 import torch
@@ -166,7 +165,7 @@ def generate_per_class_charts(df: pd.DataFrame, pivot_ap50: pd.DataFrame, pivot_
 
     # 1. Bar Chart: AP50 across all classes
     plt.figure(figsize=(14, 7))
-    ax = sns.barplot(
+    sns.barplot(
         data=df,
         x="Class_Name",
         y="AP50",
@@ -185,7 +184,7 @@ def generate_per_class_charts(df: pd.DataFrame, pivot_ap50: pd.DataFrame, pivot_
 
     # 2. Bar Chart: AP50-95 across all classes
     plt.figure(figsize=(14, 7))
-    ax = sns.barplot(
+    sns.barplot(
         data=df,
         x="Class_Name",
         y="AP50-95",

@@ -13,6 +13,7 @@ Supports:
 """
 
 import random
+
 import cv2
 import numpy as np
 
@@ -71,7 +72,7 @@ def apply_occlusion(img: np.ndarray, severity: int) -> np.ndarray:
     h, w, _ = out.shape
     total_area = h * w
     target_patch_area = total_area * ratio
-    
+
     num_patches = 4
     patch_w = int(np.sqrt(target_patch_area / num_patches))
     patch_h = patch_w
@@ -89,7 +90,7 @@ def apply_resolution_degradation(img: np.ndarray, severity: int) -> np.ndarray:
     h, w, _ = img.shape
     small_w = max(16, int(w * factor))
     small_h = max(16, int(h * factor))
-    
+
     down = cv2.resize(img, (small_w, small_h), interpolation=cv2.INTER_LINEAR)
     return cv2.resize(down, (w, h), interpolation=cv2.INTER_NEAREST)
 

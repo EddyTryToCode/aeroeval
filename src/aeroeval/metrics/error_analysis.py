@@ -10,6 +10,7 @@ Classifies object detection prediction errors into key failure taxonomy categori
 """
 
 from typing import Any, Dict, List, Tuple
+
 import numpy as np
 
 
@@ -51,7 +52,7 @@ def analyze_failure_taxonomy(
 
     for img_id, gts in gt_annotations.items():
         preds = [p for p in pred_detections.get(img_id, []) if p.get("score", 1.0) >= conf_thresh]
-        
+
         counts["total_gt"] += len(gts)
         counts["total_pred"] += len(preds)
 

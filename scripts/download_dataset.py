@@ -1,10 +1,6 @@
 import argparse
-import os
-import shutil
 import zipfile
 from pathlib import Path
-from typing import Optional
-import urllib.request
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
@@ -17,7 +13,7 @@ VISDRONE_URLS = {
 def download_file(url: str, output_path: Path) -> None:
     print(f"Downloading from {url} to {output_path}...")
     import requests
-    
+
     initial_bytes = output_path.stat().st_size if output_path.exists() else 0
     headers = {"User-Agent": "Mozilla/5.0"}
     if initial_bytes > 0:
@@ -25,13 +21,13 @@ def download_file(url: str, output_path: Path) -> None:
         print(f"Resuming download from byte {initial_bytes} ({initial_bytes / (1024*1024):.1f} MB)...")
 
     response = requests.get(url, headers=headers, stream=True, allow_redirects=True)
-    
+
     if response.status_code == 416:  # Range Not Satisfiable -> already fully downloaded
         print("File already completely downloaded.")
         return
-        
+
     response.raise_for_status()
-    
+
     content_range = response.headers.get("Content-Range")
     if content_range:
         total_size = int(content_range.split("/")[-1])
@@ -41,7 +37,7 @@ def download_file(url: str, output_path: Path) -> None:
 
     mode = 'ab' if initial_bytes > 0 else 'wb'
     downloaded = initial_bytes
-    
+
     with open(output_path, mode) as f:
         for chunk in response.iter_content(chunk_size=2 * 1024 * 1024):
             if chunk:
@@ -66,23 +62,23 @@ def verify_dataset_structure(data_dir: Path) -> bool:
         split_dir = data_dir / split
         img_dir = split_dir / "images"
         ann_dir = split_dir / "annotations"
-        
+
         if not split_dir.exists():
             print(f"[-] Missing directory: {split_dir}")
             all_ok = False
             continue
-            
+
         img_count = len(list(img_dir.glob("*.jpg"))) if img_dir.exists() else 0
         ann_count = len(list(ann_dir.glob("*.txt"))) if ann_dir.exists() else 0
-        
+
         print(f"[+] {split}:")
         print(f"    - Images: {img_count}")
         print(f"    - Annotations: {ann_count}")
-        
+
         if img_count == 0 or ann_count == 0:
             all_ok = False
             print("    [!] Warning: Missing images or annotations")
-            
+
     return all_ok
 
 def main():
@@ -104,7 +100,7 @@ def main():
             if target_folder.exists():
                 print(f"Target folder {target_folder} already exists. Skipping download.")
                 continue
-            
+
             zip_file = DATA_DIR / f"{target}.zip"
             url = VISDRONE_URLS.get(target)
             if url:

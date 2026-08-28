@@ -45,7 +45,7 @@ Aerial Drone Video / High-Resolution Stream
 ┌──────────────────────────────┐ ┌──────────────────────────────┐
 │     FastAPI REST Service     │ │  Streamlit Analytics App     │
 │   (Models, Evaluate, Report) │ │ (Overview, Compare, Deploy)  │
-│      http://localhost:8000   │ │    http://localhost:8501     │
+│      http://localhost:8001   │ │    http://localhost:8502     │
 └──────────────────────────────┘ └──────────────────────────────┘
 ```
 
@@ -102,22 +102,23 @@ python -m aeroeval recommend --profile real_time_uav --output reports
 
 ### 4. Running the Web Services
 
-#### Option A: FastAPI REST API
+#### Option A: FastAPI REST API (Local)
 ```bash
-uvicorn aeroeval.api.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn aeroeval.api.main:app --host 0.0.0.0 --port 8001 --reload
 ```
-Interactive Swagger API documentation available at: **http://localhost:8000/docs**
+Interactive Swagger API documentation available at: **http://localhost:8001/docs**
 
-#### Option B: Streamlit Analytics Dashboard
+#### Option B: Streamlit Analytics Dashboard (Local)
 ```bash
-streamlit run src/aeroeval/dashboard/app.py
+streamlit run src/aeroeval/dashboard/app.py --server.port 8502
 ```
-Open interactive dashboard at: **http://localhost:8501**
+Open interactive dashboard at: **http://localhost:8502**
 
-#### Option C: Docker Compose (All Services)
+#### Option C: Docker Compose (All Services: API on 8001 & Dashboard on 8502)
 ```bash
-docker compose up --build
+docker compose up -d
 ```
+
 
 ---
 

@@ -18,7 +18,7 @@
 
 <br>
 
-<img src="reports/annotation_samples/annotated_val_0000276_01401_d_0000514.jpg" width="800" alt="Aerial Object Detection — UAV perspective with multi-class annotations">
+<img src="docs/images/sample_aerial_detection.jpg" width="800" alt="Aerial Object Detection — UAV perspective with multi-class annotations">
 
 <sub>*VisDrone aerial imagery with ground-truth annotations: vehicles, pedestrians, and cyclists detected from UAV perspective*</sub>
 
@@ -193,7 +193,7 @@ pedestrian · people · bicycle · car · van · truck · tricycle · awning-tri
 ```
 
 <div align="center">
-<img src="reports/class_distribution.png" width="800" alt="Object class distribution across train and val splits">
+<img src="docs/images/class_distribution.png" width="800" alt="Object class distribution across train and val splits">
 <br><sub><b>Figure 1.</b> Object class distribution — extreme class imbalance with <code>car</code> (144K) dominating and <code>awning-tricycle</code> (3.2K) as the tail class</sub>
 </div>
 
@@ -205,7 +205,7 @@ pedestrian · people · bicycle · car · van · truck · tricycle · awning-tri
 - **Multi-Scale Objects**: Mean bbox area varies from 520px² (val) to 680px² (train), with tails extending to >10,000px²
 
 <div align="center">
-<img src="reports/annotation_samples/annotated_train_9999999_00049_d_0000011.jpg" width="800" alt="Dense urban scene with multi-class aerial detection annotations">
+<img src="docs/images/sample_dense_urban.jpg" width="800" alt="Dense urban scene with multi-class aerial detection annotations">
 <br><sub><b>Figure 2.</b> Dense urban scene captured from UAV — cars, vans, motorcycles, pedestrians annotated from oblique aerial viewpoint</sub>
 </div>
 
@@ -256,14 +256,14 @@ hardware: NVIDIA RTX (CUDA)
 ### Training Convergence
 
 <div align="center">
-<img src="experiments/baseline_yolo11n/results.png" width="900" alt="Training convergence curves for baseline YOLO11n experiment">
+<img src="docs/images/training_curves.png" width="900" alt="Training convergence curves for baseline YOLO11n experiment">
 <br><sub><b>Figure 3.</b> Baseline (Exp A) training dynamics — box/cls/dfl loss convergence and mAP progression over 50 epochs</sub>
 </div>
 
 ### Per-Class Detection Performance
 
 <div align="center">
-<img src="reports/per_class_ap50_comparison.png" width="900" alt="Per-class AP50 comparison across all four experiments">
+<img src="docs/images/per_class_ap50_comparison.png" width="900" alt="Per-class AP50 comparison across all four experiments">
 <br><sub><b>Figure 4.</b> Per-class AP@50 comparison — <code>car</code> achieves 0.88 AP50 (B2) while <code>awning-tricycle</code> remains the hardest class at 0.21 AP50</sub>
 </div>
 
@@ -275,7 +275,7 @@ hardware: NVIDIA RTX (CUDA)
 ### Object Scale Analysis
 
 <div align="center">
-<img src="reports/size_map50_comparison.png" width="800" alt="Object scale performance stratified by small, medium, and large objects">
+<img src="docs/images/size_map50_comparison.png" width="800" alt="Object scale performance stratified by small, medium, and large objects">
 <br><sub><b>Figure 5.</b> Size-stratified AP@50 — small objects (<32²px) show the largest absolute gain from B1→B2 (+6.2 pp), confirming the resolution hypothesis</sub>
 </div>
 
@@ -290,7 +290,7 @@ hardware: NVIDIA RTX (CUDA)
 ### Error Taxonomy
 
 <div align="center">
-<img src="reports/error_analysis/error_distribution_comparison.png" width="800" alt="Error type distribution comparison across all experiments">
+<img src="docs/images/error_distribution.png" width="800" alt="Error type distribution comparison across all experiments">
 <br><sub><b>Figure 6.</b> Failure mode distribution — <b>Small-Object Miss (FN)</b> is the dominant error mode across all models, accounting for 60-80% of total errors</sub>
 </div>
 
@@ -306,7 +306,7 @@ hardware: NVIDIA RTX (CUDA)
 ### Confusion Matrix Analysis
 
 <div align="center">
-<img src="experiments/baseline_yolo11n/confusion_matrix_normalized.png" width="650" alt="Normalized confusion matrix for baseline YOLO11n model">
+<img src="docs/images/confusion_matrix.png" width="650" alt="Normalized confusion matrix for baseline YOLO11n model">
 <br><sub><b>Figure 7.</b> Normalized confusion matrix (Exp A) — high background confusion rates (0.67–0.83) for small classes like <code>pedestrian</code>, <code>people</code>, and <code>bicycle</code></sub>
 </div>
 
@@ -319,7 +319,7 @@ A model that excels on clean imagery but fails under real-world perturbations is
 ### Environmental Corruption Testing
 
 <div align="center">
-<img src="reports/robustness_heatmap.png" width="700" alt="Robustness heatmap showing mean mAP50 under each corruption type for all experiments">
+<img src="docs/images/robustness_heatmap.png" width="700" alt="Robustness heatmap showing mean mAP50 under each corruption type for all experiments">
 <br><sub><b>Figure 8.</b> Robustness matrix — mean corrupted mAP@50 across 8 perturbation types. B2 and B3 show the highest environmental resilience</sub>
 </div>
 
@@ -337,12 +337,12 @@ A model that excels on clean imagery but fails under real-world perturbations is
 ### Degradation Curves
 
 <div align="center">
-<img src="reports/robustness_degradation_curves.png" width="900" alt="Performance degradation curves across severity levels for all corruption types">
+<img src="docs/images/robustness_degradation_curves.png" width="900" alt="Performance degradation curves across severity levels for all corruption types">
 <br><sub><b>Figure 9.</b> Degradation curves (Severity 1→3) — <b>Motion Blur</b> causes the steepest drop (up to 75% mAP loss at severity 3), while <b>Low Light</b> and <b>Overexposure</b> show remarkable stability</sub>
 </div>
 
 <div align="center">
-<img src="reports/robustness_radar_profiles.png" width="600" alt="Radar chart showing environmental sensitivity profiles per model">
+<img src="docs/images/robustness_radar_profiles.png" width="600" alt="Radar chart showing environmental sensitivity profiles per model">
 <br><sub><b>Figure 10.</b> Environmental sensitivity radar — smaller area = more robust. Exp A (red) shows high sensitivity across all perturbations, while B3 (purple) maintains the tightest profile</sub>
 </div>
 
@@ -355,14 +355,14 @@ AeroEval employs **TOPSIS (Technique for Order Preference by Similarity to Ideal
 ### Multi-Dimensional Profile Comparison
 
 <div align="center">
-<img src="reports/deployment_profile_radar_comparison.png" width="600" alt="Multi-dimensional radar comparing models across accuracy, robustness, throughput, and lightweight axes">
+<img src="docs/images/deployment_radar.png" width="600" alt="Multi-dimensional radar comparing models across accuracy, robustness, throughput, and lightweight axes">
 <br><sub><b>Figure 11.</b> Multi-dimensional deployment profile — each axis represents a normalized evaluation criterion. <b>Exp A</b> dominates throughput/lightweight, <b>Exp B2</b> dominates accuracy/robustness</sub>
 </div>
 
 ### Pareto Efficiency Frontier
 
 <div align="center">
-<img src="reports/pareto_frontier_accuracy_vs_latency.png" width="800" alt="Pareto frontier showing accuracy vs latency trade-off with real-time boundary">
+<img src="docs/images/pareto_frontier.png" width="800" alt="Pareto frontier showing accuracy vs latency trade-off with real-time boundary">
 <br><sub><b>Figure 12.</b> Pareto frontier — <b>B1</b> is the only model that achieves >0.45 mAP@50 while staying below the 30 FPS real-time boundary (dashed red). B2 offers the highest accuracy but crosses the real-time threshold</sub>
 </div>
 
@@ -422,7 +422,7 @@ AeroEval employs **TOPSIS (Technique for Order Preference by Similarity to Ideal
 ## 📐 Model Calibration
 
 <div align="center">
-<img src="reports/calibration/reliability_diagram.png" width="600" alt="Reliability diagram showing model calibration across all experiments">
+<img src="docs/images/reliability_diagram.png" width="600" alt="Reliability diagram showing model calibration across all experiments">
 <br><sub><b>Figure 13.</b> Reliability diagram — all models show <b>over-confidence bias</b> (curves above diagonal), meaning predicted probabilities consistently exceed empirical precision. Models are more reliable at high confidence thresholds (>0.8)</sub>
 </div>
 
@@ -665,7 +665,7 @@ docker compose down
 ## 📊 Detection Visualization
 
 <div align="center">
-<img src="experiments/baseline_yolo11n/val_batch0_pred.jpg" width="900" alt="Validation batch predictions showing multi-class detection across diverse aerial scenes">
+<img src="docs/images/val_predictions.jpg" width="900" alt="Validation batch predictions showing multi-class detection across diverse aerial scenes">
 <br><sub><b>Figure 14.</b> Validation predictions (Exp A) — YOLO11n detection outputs across 16 diverse aerial scenes with confidence scores. Note the dense urban intersections, highway segments, and parking areas</sub>
 </div>
 
